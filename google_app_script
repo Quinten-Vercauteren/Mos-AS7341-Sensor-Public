@@ -1,0 +1,20 @@
+var sheet_id = "XXXXX";
+var sheet_name = "PAR_Sensor_G2";
+
+function doGet(e){
+  var ss = SpreadsheetApp.openById(sheet_id);
+  var sheet = ss.getSheetByName(sheet_name);
+  var f1 = String(e.parameter.f1);
+  var f2 = String(e.parameter.f2);
+  var f3 = String(e.parameter.f3);
+  var f4 = String(e.parameter.f4);
+  var f5 = String(e.parameter.f5);
+  var f6 = String(e.parameter.f6);
+  var f7 = String(e.parameter.f7);
+  var f8 = String(e.parameter.f8);
+  var clear = String(e.parameter.clear);
+  var nir = String(e.parameter.nir);
+  var DatumTijd = new Date();
+  var timestamp = Utilities.formatDate(DatumTijd, "GMT+1", "yyyy-MM-dd HH:mm:ss");
+  sheet.appendRow([timestamp,f1,f2,f3,f4,f5,f6,f7,f8,clear,nir]);
+}
